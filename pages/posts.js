@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { Alert } from "react-bootstrap";
 
 export default function Posts({ posts }) {
    return (
@@ -12,11 +13,13 @@ export default function Posts({ posts }) {
             <ul>
                {posts.map((post) => {
                   return (
-                     <Link key={post.id} href={`/posts/${post.id}`}>
-                        <a>
-                           <li>{post.title}</li>
-                        </a>
-                     </Link>
+                     <Alert variant="info">
+                        <Link key={post.id} href={`/posts/${post.id}`}>
+                           <a>
+                              <li>{post.title}</li>
+                           </a>
+                        </Link>
+                     </Alert>
                   );
                })}
             </ul>
